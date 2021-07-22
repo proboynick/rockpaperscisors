@@ -11,6 +11,7 @@ import java.security.NoSuchAlgorithmException;
 public class Game {
 
     public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeyException, IOException {
+//        String[] testArgs = {"1", "2", "3", "4", "5", "6", "7", "8","9"};
         Game game = new Game(args);
         game.play();
     }
@@ -69,7 +70,8 @@ public class Game {
         System.out.println("Computer move:" + moves[computerMove]);
         if (playerMove - 1 == computerMove) {
             System.out.println("Draw!");
-        } else if (computerMove > playerMove - 1 && computerMove <= playerMove - 1 + moves.length / 2) {
+        } else if ((computerMove > playerMove - 1 && computerMove <= playerMove - 1 + moves.length / 2)
+                || computerMove < playerMove - 1 - moves.length / 2) {
             System.out.println("You lose...");
         } else {
             System.out.println("You win!");
